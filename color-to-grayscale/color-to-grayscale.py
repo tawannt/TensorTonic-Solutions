@@ -4,12 +4,17 @@ def color_to_grayscale(image):
     """
     # Write code here
     import numpy as np
-    h, w = len(image), len(image[0])
-    img = np.array(image).reshape(-1, 3)
+    # h, w = len(image), len(image[0])
+    # img = np.array(image).reshape(-1, 3)
+    # weights = np.array([[0.299, 0.587, 0.114]])
+    # img = img @ weights.T
+    # return img.reshape(h, w).tolist()
 
-    m = np.array([[0.299, 0.587, 0.114]])
+    img = np.array(image)
+    weights = np.array([0.299, 0.587, 0.114])
+    # img = img @ weights ## still okay
+    img = img @ weights.T
+    
+    return img.tolist()
 
-    img = img @ m.T
-
-    return img.reshape(h, w).tolist()
     
