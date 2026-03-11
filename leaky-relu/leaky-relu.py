@@ -10,6 +10,6 @@ def leaky_relu(x, alpha=0.01):
 
     mask = x < 0
     x[mask] = alpha * x[mask]
-
+    
     return x
     
