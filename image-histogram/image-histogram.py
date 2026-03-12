@@ -10,4 +10,7 @@ def image_histogram(image):
     for idx, val in enumerate(vals):
         histogram[val] = counts[idx]
 
+    ## faster
+    img = np.array(image)
+    histogram = np.bincount(img.ravel(), minlength=256).tolist()
     return histogram
