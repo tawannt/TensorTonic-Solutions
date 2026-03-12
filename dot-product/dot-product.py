@@ -8,12 +8,12 @@ def dot_product(x, y):
     # Write code here
     if len(x) != len(y):
         raise ValueError
-    # sum = 0
-    # for idx in range(len(x)):
-    #     sum += x[idx]*y[idx]
-    # return sum
+    sum = 0
+    for idx in range(len(x)):
+        sum += x[idx]*y[idx]
+    return sum
 
-    import numpy as np
-    x, y = np.array(x), np.array(y)
+    # import numpy as np
+    # x, y = np.array(x), np.array(y)
 
-    return np.sum(x*y)
+    # return np.sum(x*y)
