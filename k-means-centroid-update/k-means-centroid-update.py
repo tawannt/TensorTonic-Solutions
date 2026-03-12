@@ -9,7 +9,8 @@ def k_means_centroid_update(points, assignments, k):
     clusters = np.unique(assignments, return_counts=False)
 
     d_vector = points.shape[1]
-    
+
+    # if no centroids update => default = 0
     centroids = np.zeros((k, d_vector), dtype=float)
     for idx, cluster in enumerate(clusters):
         mask = (assignments == cluster)
