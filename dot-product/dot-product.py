@@ -6,6 +6,8 @@ def dot_product(x, y):
     Must return a float.
     """
     # Write code here
+    if len(x) != len(y):
+        raise ValueError
     # sum = 0
     # for idx in range(len(x)):
     #     sum += x[idx]*y[idx]
