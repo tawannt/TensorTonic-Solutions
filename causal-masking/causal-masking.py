@@ -12,6 +12,10 @@ def apply_causal_mask(scores, mask_value=-1e9):
     # if not dtype=bool, default type = float
     # => causing exception: arrays used as indices must be of integer (or boolean) type
     mask = np.triu(np.ones((T, T), dtype=bool), k=1) 
+    # i = np.arange(T)[:, None]
+    # j = np.arange(T)[None, :] # j = np.arange(T)
+    # mask = j > i
+
     print(mask)
 
     masked_scores[..., mask] = mask_value
