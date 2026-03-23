@@ -6,11 +6,14 @@ def f1_micro(y_true, y_pred) -> float:
     import numpy as np
     
     y_true, y_pred = np.array(y_true), np.array(y_pred)
-    diff = y_true - y_pred
-    mask = (diff == 0)
+    # diff = y_true - y_pred
+    # mask = (diff == 0)
 
-    total_tp = len(diff[mask])
-    total_fp = len(diff) - total_tp
+    # total_tp = len(diff[mask])
+    # total_fp = len(diff) - total_tp
+    # (y_pred == y_true) = [True False False True]
+    total_tp = np.sum(y_pred == y_true)
+    total_fp = np.sum(y_pred != y_true)
     total_fn = total_fp
 
     return (2 * total_tp) / (2*total_tp + total_fp + total_fn)
